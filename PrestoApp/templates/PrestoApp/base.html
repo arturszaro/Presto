@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Presto</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'CSS/prestostyle.css' %}">
+
+    <body>
+
+    <nav class= 'navbar navbar-light bg-light'>
+      <div class="container">
+        <ul class="nav navbar-nav navbar-collapse navbar-left navbar-collapse">
+          <li><a id="logo" class ='navbar-brand navbar-left bigbrand' href="{% url 'post_list' %}"</a><img  src=" {% static 'IMAGES/logo.png' %} " alt=""></li>
+          <li><a class="collapse" href="{% url 'menu'%}">Menu</a></li>
+          <li><a href="{% url 'galeria'%}">Galeria</a></li>
+          <li><a href="{% url 'kontakt'%}">Kontakt</a></li>
+        </ul>
+        <ul class='nav navbar-nav navbar-right '>
+            {%if user.is_authenticated%}
+              <li><a href="{% url 'itemmenu'%}">Nowy item menu</a></li>
+              <li><a href="{% url 'post_new'%}">Nowy Post</a></li>
+              <li><a href="{% url 'post_draft_list'%}">Szkic postu</a></li>
+              <li><a href="{% url 'logout' %}">Logout</a></li>
+              <li id="user">Witaj: {{user.username}}</li>
+              {% else %}
+              <li><a class='nav navbar-right' href="{% url 'login'%}"><span class= 'glyphicon glyphicon-user'></span></a></li>
+              {%endif%}
+        </ul>
+      </div>
+    </nav>
+
+
+
+    <div class="content container">
+            {% block content %}
+            {% endblock %}
+    </div>
+
+  </body>
+</html>

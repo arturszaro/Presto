@@ -1,0 +1,24 @@
+{% extends "PrestoApp/base.html" %}
+{% block content %}
+<div>
+  {% for post in post_list %}
+
+
+    <div class="post">
+      <div class="date">
+        <p>Dodany dnia:{{post.published_date}}</p>
+      </div>
+      <div class="posttitle loader jumbotron">
+        <h2>{{post.title}}</h2>
+        <p>{{post.text}}</p>
+      </div>
+      {%if user.is_authenticated%}
+      <td><a class = 'btn btn-warning glyphicon glyphicon-wrench' href="{% url 'post_edit' pk=post.pk%}"></a>
+      <a class = 'btn btn-danger glyphicon glyphicon-remove' href="{% url 'post_remove' pk=post.pk%}"></a></td>
+      {%endif%}
+    </div>
+
+
+  {% endfor %}
+</div>
+{% endblock %}

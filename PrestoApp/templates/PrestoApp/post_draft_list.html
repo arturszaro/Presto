@@ -1,0 +1,11 @@
+{% extends "PrestoApp/base.html" %}
+{% block content %}
+<h1>Szkice:</h1>
+  {%for post in post_list %}
+  <div class="post">
+    <p class="date">Utworzone: {{post.create_date}}</p>
+    <h1><a href="{% url 'post_detail' pk=post.pk%}">{{post.title}}</a></h1>
+    <p>{{post.text|truncatechars:200}}</p>
+  </div>
+  {% endfor %}
+{% endblock %}

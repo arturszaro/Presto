@@ -1,0 +1,109 @@
+{% extends "PrestoApp/base.html" %}
+{% block content %}
+
+<div class="container menu">
+
+<h2>Pizza:</h2>
+<p class = "info">Do wyboru rodzaje ciasta: Cienkie lub Grube</p>
+<table class="table">
+  <td>Numer</td> <td>Nazwa</td> <td>Składniki</td><td class = "cena">Duża (32cm)</td> <td class = "cena">Maxi (50cm)</td>{%if user.is_authenticated%}<td>Edytuj / Usuń</td>{%endif%}
+  {% for item in itemmenu_list %}
+  {% if item.category.title == "Pizza" %}
+   <tr>
+     <td>{{item.number}}</td> <td>{{item.title}}</td> <td>{{item.ingredients}}</td> <td class = "cena">{{item.price1}} zł</td> <td class = "cena">{{item.price2}} zł</td>
+     {%if user.is_authenticated%}
+     <td><a class = 'btn btn-warning glyphicon glyphicon-wrench' href="{% url 'menu_update' pk=item.pk%}"></a>
+     <a class = 'btn btn-danger glyphicon glyphicon-remove' href="{% url 'menu_remove' pk=item.pk%}"></a></td>
+   {%endif%}
+   </tr>
+   {%endif%}
+   {% endfor %}
+</table>
+
+<h2>Pizza Bambini:</h2>
+<table class="table">
+  <p class = "info">Pizza 20cm + frytki 100g + upominek</p>
+  <td>Numer</td> <td>Nazwa</td> <td>Składniki</td><td class = "cena">Cena</td>{%if user.is_authenticated%}<td>Edytuj / Usuń</td>{%endif%}
+  {% for item in itemmenu_list %}
+  {% if item.category.title == "Pizza Bambini" %}
+   <tr>
+     <td>{{item.number}}</td> <td>{{item.title}}</td> <td>{{item.ingredients}}</td> <td class = "cena">{{item.price1}} zł</td>
+     {%if user.is_authenticated%}
+     <td><a class = 'btn btn-warning glyphicon glyphicon-wrench' href="{% url 'menu_update' pk=item.pk%}"></a>
+     <a class = 'btn btn-danger glyphicon glyphicon-remove' href="{% url 'menu_remove' pk=item.pk%}"></a></td>
+   {%endif%}
+   </tr>
+   {%endif%}
+   {% endfor %}
+</table>
+
+<h2>Sałatki:</h2>
+<table class="table">
+  <td>Numer</td> <td>Nazwa</td> <td>Składniki</td><td class = "cena">Cena</td>{%if user.is_authenticated%}<td>Edytuj / Usuń</td>{%endif%}
+  {% for item in itemmenu_list %}
+  {% if item.category.title == "Sałatki" %}
+   <tr>
+     <td>{{item.number}}</td> <td>{{item.title}}</td> <td>{{item.ingredients}}</td> <td class = "cena">{{item.price1}} zł</td>
+     {%if user.is_authenticated%}
+     <td><a class = 'btn btn-warning glyphicon glyphicon-wrench' href="{% url 'menu_update' pk=item.pk%}"></a>
+     <a class = 'btn btn-danger glyphicon glyphicon-remove' href="{% url 'menu_remove' pk=item.pk%}"></a></td>
+   {%endif%}
+   </tr>
+   {%endif%}
+   {% endfor %}
+</table>
+
+<h2>Dania Gorące:</h2>
+<p class = "info">Przy zestawie do wyboru: frytki, ćwiartki ziemniaczane, kulki ziemniaczane</p>
+<table class="table">
+  <td>Numer</td> <td>Nazwa</td><td class = "cena">Cena</td>{%if user.is_authenticated%}<td>Edytuj / Usuń</td>{%endif%}
+  {% for item in itemmenu_list %}
+  {% if item.category.title == "Dania Gorące" %}
+   <tr>
+     <td>{{item.number}}</td> <td>{{item.title}}</td> <td class = "cena">{{item.price1}} zł</td>
+     {%if user.is_authenticated%}
+     <td><a class = 'btn btn-warning glyphicon glyphicon-wrench' href="{% url 'menu_update' pk=item.pk%}"></a>
+     <a class = 'btn btn-danger glyphicon glyphicon-remove' href="{% url 'menu_remove' pk=item.pk%}"></a></td>
+     {%endif%}
+   </tr>
+   {%endif%}
+   {% endfor %}
+</table>
+
+<h2>Dania Barowe:</h2>
+<table class="table">
+  <td>Numer</td> <td>Nazwa</td><td class = "cena">Cena</td>{%if user.is_authenticated%}<td>Edytuj / Usuń</td>{%endif%}
+  {% for item in itemmenu_list %}
+  {% if item.category.title == "Dania Barowe" %}
+   <tr>
+     <td>{{item.number}}</td> <td>{{item.title}}</td> <td class = "cena">{{item.price1}} zł</td>
+     {%if user.is_authenticated%}
+     <td><a class = 'btn btn-warning glyphicon glyphicon-wrench' href="{% url 'menu_update' pk=item.pk%}"></a>
+     <a class = 'btn btn-danger glyphicon glyphicon-remove' href="{% url 'menu_remove' pk=item.pk%}"></a></td>
+     {%endif%}
+   </tr>
+   {%endif%}
+   {% endfor %}
+</table>
+
+<h2>Dodatki:</h2>
+<table class="table">
+  <td>Nazwa</td> <td class = "cena">Cena</td> <td class = "cena">Cena przy MAXI</td>{%if user.is_authenticated%}<td>Edytuj / Usuń</td>{%endif%}
+  {% for item in itemmenu_list %}
+  {% if item.category.title == "Dodatki" %}
+   <tr>
+    <td>{{item.title}}</td> <td class = "cena">{{item.price1}} zł</td> <td class = "cena">{{item.price2}} zł</td>
+    {%if user.is_authenticated%}
+    <td><a class = 'btn btn-warning glyphicon glyphicon-wrench' href="{% url 'menu_update' pk=item.pk%}"></a>
+    <a class = 'btn btn-danger glyphicon glyphicon-remove' href="{% url 'menu_remove' pk=item.pk%}"></a></td>
+    {%endif%}
+   </tr>
+   {%endif%}
+   {% endfor %}
+</table>
+
+<p class = "info">Zamówienia przyjmowane są do godz. 21:45.</p>
+<p class = "info">Dowóz do 6km GRATIS! Powyżej 6km - 1km = 2,00zł.</p>
+<p class = "info">Dowozy realizujemy tylko przy zamówieniu powyżej 30zł.</p>
+<p class = "info">Oferta ważna od 1 sierpnia 2021r.</p>
+{% endblock%}

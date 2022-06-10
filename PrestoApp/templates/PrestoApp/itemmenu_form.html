@@ -1,0 +1,10 @@
+{% extends "PrestoApp/base.html" %}
+{% block content %}
+<h1>Item Menu</h1>
+<form class="itemmenu-form"  method="POST">
+  {% csrf_token %}
+  {{form.as_p}}
+  <button type="submit" class="save btn btn-default">Save</button>
+
+</form>
+{% endblock %}

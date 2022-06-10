@@ -1,0 +1,106 @@
+.navbar{
+  background-color: #2b2d42;
+  border: 0px solid #606c38;
+  border-radius: 0px 0px 25px 25px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  opacity: 0.95;
+  z-index:1;
+}
+
+
+.navbar a{
+  color: #edf2f4;
+}
+.navbar a:hover{
+  color:#2b2d42;
+}
+
+
+body {
+background-image: url("/static/IMAGES/pobrane.jpg");
+background-size: 100%;
+padding-top: 75px;
+}
+.menu{
+  width: auto;
+}
+.content{
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-bottom: 1vw;
+  padding-top: 1vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  padding-bottom: 2vw;
+  background: #edf2f4;
+  opacity: 0.95;
+  width: auto;
+  border-radius: 10px;
+}
+
+.jumbotron {
+background:transparent;
+border: 2px solid #2b2d42;
+padding-top: 1px;
+padding-left:1px;
+padding-bottom: 1px;
+}
+
+.bigbrand img{
+  width:100px;
+  height:auto;
+  padding-left: 10px;
+  padding-top:5px;
+  margin-right: 20px;
+}
+.bigbrand img:hover{
+  width:120px;
+  height:auto;
+  background-color: #2b2d42;
+  padding-left: 0px;
+  padding-top: 0px;
+  margin-right: 0px;
+}
+
+#logo{
+  padding-top: 5px;
+  background-color: #2b2d42
+}
+
+#user{
+  color: #edf2f4;
+  font-size: 10px;
+}
+
+.table{
+  border: 2px solid #2b2d42;
+  width: 100%;
+}
+
+.cena{
+  text-align: right;
+}
+
+.date{
+  font-size: 10px;
+}
+
+td{
+  border: 1px solid #8d99ae;
+}
+
+.info{
+  font-size: 10px;
+}
+
+.gallery img{
+  padding: 1px;
+  opacity: 0.8;
+  border-radius: 25px;
+}
+.gallery img:hover{
+  opacity: 2;
+}
