@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-gta+9%us^t&jzb#8p=0%vt9i@g8yz=bm)(+#ho_q%&%1wfsi8*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['arturszaro.pythonanywhere.com','127.0.0.1']
 
 
 # Application definition
@@ -107,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'europe/warsaw'
 
 USE_I18N = True
 

@@ -9,7 +9,7 @@
 
     </div>
   {% else %}
-    <a class = 'btn btn-default' href="{% url 'post_publish' pk=post.pk%}">Publish</a>
+    <a class = 'btn btn-primary' href="{% url 'post_publish' pk=post.pk%}">Opublikuj</a>
   {% endif %}
 
     <p class= 'postcontent jumbotron'> {{post.text|safe|linebreaksbr}}</p>

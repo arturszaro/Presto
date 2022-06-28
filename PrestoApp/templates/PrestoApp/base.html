@@ -11,11 +11,11 @@
 
     <body>
 
-    <nav class= 'navbar navbar-light bg-light'>
+    <nav class= 'navbar navbar-light bg-light '>
       <div class="container">
-        <ul class="nav navbar-nav navbar-collapse navbar-left navbar-collapse">
-          <li><a id="logo" class ='navbar-brand navbar-left bigbrand' href="{% url 'post_list' %}"</a><img  src=" {% static 'IMAGES/logo.png' %} " alt=""></li>
-          <li><a class="collapse" href="{% url 'menu'%}">Menu</a></li>
+        <ul class="nav navbar-nav navbar-collapse navbar-left">
+          <li><a id="logo" class ='navbar-brand navbar-left bigbrand' href="{% url 'post_list' %}"><img src=" {% static 'IMAGES/logo.png' %} " alt=""></a></li>
+          <li><a id="menu" href="{% url 'menu'%}">Menu</a></li>
           <li><a href="{% url 'galeria'%}">Galeria</a></li>
           <li><a href="{% url 'kontakt'%}">Kontakt</a></li>
         </ul>
@@ -33,12 +33,15 @@
       </div>
     </nav>
 
-
+    <div class="bottomcontact">
+      <p>Numer telefonu: 533 988 210</p>
+    </div>
 
     <div class="content container">
             {% block content %}
             {% endblock %}
     </div>
+
 
   </body>
 </html>

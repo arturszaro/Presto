@@ -6,11 +6,11 @@
 
     <div class="post">
       <div class="date">
-        <p>Dodany dnia:{{post.published_date}}</p>
+        <p>Dodany dnia: {{post.published_date|date:"d/m/Y G:i"}}</p>
       </div>
-      <div class="posttitle loader jumbotron">
+      <div class="posttitle jumbotron">
         <h2>{{post.title}}</h2>
-        <p>{{post.text}}</p>
+        <p class="post">{{post.text|linebreaksbr}}</p>
       </div>
       {%if user.is_authenticated%}
       <td><a class = 'btn btn-warning glyphicon glyphicon-wrench' href="{% url 'post_edit' pk=post.pk%}"></a>

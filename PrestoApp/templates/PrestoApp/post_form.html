@@ -3,8 +3,8 @@
 <h1>Post</h1>
 <form class="post-form"  method="POST">
   {% csrf_token %}
-  {{form.as_p}}
-  <button type="submit" class="save btn btn-default">Save</button>
+  {{form.as_p|linebreaksbr}}
+  <button type="submit" class="save btn btn-default">Zapisz</button>
 
 </form>
 {% endblock %}
